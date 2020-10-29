@@ -1,55 +1,62 @@
 {
-    "Monday" : {
-        "Lesson1" : { "timestart" : "timeend" },
-        "Lesson2" : { "timestart" : "timeend" },
-        "Lesson3" : { "timestart" : "timeend" },
-        "Lesson4" : { "timestart" : "timeend" },
-        "Lesson5" : { "timestart" : "timeend" },
-        "Lesson6" : { "timestart" : "timeend" }
+  "Monday": [
+    {
+      "title": "Русский язык",
+      "teacher": "МР",
+      "cabinet": 204
     },
-
-    "Tuesday" : {
-        "Lesson1" : { "timestart" : "timeend" },
-        "Lesson2" : { "timestart" : "timeend" },
-        "Lesson3" : { "timestart" : "timeend" },
-        "Lesson4" : { "timestart" : "timeend" },
-        "Lesson5" : { "timestart" : "timeend" },
-        "Lesson6" : { "timestart" : "timeend" }
-    },
-
-    "Wednesday" : {
-        "Lesson1" : { "timestart" : "timeend" },
-        "Lesson2" : { "timestart" : "timeend" },
-        "Lesson3" : { "timestart" : "timeend" },
-        "Lesson4" : { "timestart" : "timeend" },
-        "Lesson5" : { "timestart" : "timeend" },
-        "Lesson6" : { "timestart" : "timeend" }
-    },
-
-    "Thurstday" : {
-        "Lesson1" : { "timestart" : "timeend" },
-        "Lesson2" : { "timestart" : "timeend" },
-        "Lesson3" : { "timestart" : "timeend" },
-        "Lesson4" : { "timestart" : "timeend" },
-        "Lesson5" : { "timestart" : "timeend" },
-        "Lesson6" : { "timestart" : "timeend" }
-    },
-
-    "Friday" : {
-        "Lesson1" : { "timestart" : "timeend" },
-        "Lesson2" : { "timestart" : "timeend" },
-        "Lesson3" : { "timestart" : "timeend" },
-        "Lesson4" : { "timestart" : "timeend" },
-        "Lesson5" : { "timestart" : "timeend" },
-        "Lesson6" : { "timestart" : "timeend" }
-    },
-
-    "Saturday" : {
-        "Lesson1" : { "timestart" : "timeend" },
-        "Lesson2" : { "timestart" : "timeend" },
-        "Lesson3" : { "timestart" : "timeend" },
-        "Lesson4" : { "timestart" : "timeend" },
-        "Lesson5" : { "timestart" : "timeend" },
-        "Lesson6" : { "timestart" : "timeend" }
+    {
+      "title": "Алгебра",
+      "teacher": "ЕЕ",
+      "cabinet": 204
     }
+  ],
+  "Thursday": [
+    {
+      "title": "Алгебра",
+      "teacher": "ЕЕ",
+      "cabinet": 204
+    },
+    {
+      "title": "Алгебра",
+      "teacher": "ЕЕ",
+      "cabinet": 204
+    }
+  ],
+  "Wednesday": [
+    {
+      "title": "Алгебра",
+      "teacher": "ЕЕ",
+      "cabinet": 204
+    },
+    {
+      "title": "Алгебра",
+      "teacher": "ЕЕ",
+      "cabinet": 204
+    }
+  ],
+  "Friday": [
+    {
+      "title": "Алгебра",
+      "teacher": "ЕЕ",
+      "cabinet": 204
+    },
+    {
+      "title": "Алгебра",
+      "teacher": "ЕЕ",
+      "cabinet": 204
+    }
+  ],
+  "Saturday": [
+    {
+      "title": "Алгебра",
+      "teacher": "ЕЕ",
+      "cabinet": 204
+    },
+    {
+      "title": "Алгебра",
+      "teacher": "ЕЕ",
+      "cabinet": 204
+    }
+  ]
 }
