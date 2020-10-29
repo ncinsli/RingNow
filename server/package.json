@@ -15,7 +15,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "ts-node-dev --respawn ./app.ts"
+    "start": "ts-node-dev --respawn ./app.ts",
+    "build": "tsc"
   },
   "author": "ncinsli",
   "license": "ISC"
