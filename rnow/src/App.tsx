@@ -12,6 +12,7 @@ const App: React.FC = () => {
     const [loading, setLoading] = useState(true);
     const [currentLesson, setCurrentLesson] = useState(0);
     const [lessons, setLessons] = useState<Lesson[]>([]);
+    const [lessonsTime, setLessonsTime] = useState<LessonTime[]>([]);
 
 
     useEffect(() => {
@@ -20,7 +21,9 @@ const App: React.FC = () => {
                 console.log(res.data);
                 const date = new Date().getDay();
                 setLessons(res.data[_mapIndexToDay[date]]);
-                setCurrentLesson(_calcCurrentLesson(res.data[_mapIndexToDay[date]]));
+                const [lessonIndex, lessonsTime] = _calcCurrentLesson(res.data[_mapIndexToDay[date]]);
+                setCurrentLesson(lessonIndex);
+                setLessonsTime(lessonsTime);
                 setLoading(false);
             })
             .catch((e) => {
@@ -34,7 +37,7 @@ const App: React.FC = () => {
             !loading
                 ? <React.Fragment>
                     <CurrentSubject className={className} lesson={lessons[currentLesson]}/>
-                    <TimeTable/>
+                    <TimeTable lessons={lessons} times={lessonsTime} currentLessonIndex={currentLesson}/>
                 </React.Fragment>
                 : <Loader/>
         }
@@ -44,20 +47,28 @@ const App: React.FC = () => {
 
 const _mapIndexToDay = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
-const _calcCurrentLesson = (lessons: Lesson[]): number => {
+export const _calcCurrentLesson = (lessons: Lesson[]): [number, LessonTime[]] => {
+    let lessonIndex = lessons.length - 1;
     const now = {h: new Date().getHours(), m: new Date().getMinutes()};
     let start = {h: 9, m: 0}, end = {h: 9, m: 45};
+    const lessonsTimes_: LessonTime[] = [];
 
     for (let i = 0; i < lessons.length; i++) {
 
         if (_isBetween(start, end, now)) {
-            return i;
+            lessonIndex = i;
         }
 
-        if (i == 0) {
-            start = _add(start, 45);
-            end = _add(end, 45);
-        } else if (i === 2 || i === 3) {
+        lessonsTimes_.push({
+            from: start,
+            to: end,
+        });
+
+        // if (i == 0) {
+        //     start = _add(start, 55);
+        //     end = _add(end, 45);
+        // } else
+        if (i === 2 || i === 3) {
             start = _add(start, 65)
             end = _add(end, 65)
         } else {
@@ -66,8 +77,7 @@ const _calcCurrentLesson = (lessons: Lesson[]): number => {
         }
     }
 
-
-    return lessons.length - 1;
+    return [lessonIndex, lessonsTimes_];
 };
 const _add = (time: Time, add: number): Time => {
     const min = time.h * 60 + time.m + add;
@@ -84,9 +94,14 @@ export type Lesson = {
     teacher: string;
 };
 
-type Time = {
+export type Time = {
     h: number;
     m: number;
+}
+
+export type LessonTime = {
+    from: Time;
+    to: Time;
 }
 
 export default App;

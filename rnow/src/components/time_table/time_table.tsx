@@ -1,12 +1,14 @@
 import React from "react";
 import './index.scss';
-import {Lesson} from "../../App";
+import {Lesson, LessonTime, Time} from "../../App";
 
 type Props = {
     lessons: Lesson[],
+    times: LessonTime[],
+    currentLessonIndex: number;
 }
 
-const TimeTable: React.FC<Props> = ({lessons}) => {
+const TimeTable: React.FC<Props> = ({lessons, times, currentLessonIndex}) => {
     return <
         div className="time_table">
         <h2>Уроки</h2>
@@ -16,8 +18,8 @@ const TimeTable: React.FC<Props> = ({lessons}) => {
                 {
                     lessons.map((e, i) => {
                         return <div className="time-group">
-                            <p className="start_time">9:00</p>
-                            <p className="end_time">9:45</p>
+                            <p className="start_time">{_formatTime(times[i].from)}</p>
+                            <p className="end_time">{_formatTime(times[i].to)}</p>
                         </div>
                     })
                 }
@@ -26,23 +28,36 @@ const TimeTable: React.FC<Props> = ({lessons}) => {
             <div className="divider"/>
 
             <div className="cards">
-                <div className="card ">
-                    <span className="lesson">123</span>
-                    <p className="teacher">Маргарита Леонидовна</p>
-                    <div className="info cabinet">
-                        <MapPinIcon/>
-                        <p className="cabinet">304 кабинет</p>
-                    </div>
-                    <div className="info lesson_time">
-                        <ClockIcon/>
-                        <p className="clock">9:00 - 9:45</p>
-                    </div>
-                </div>
+
+                {
+                    lessons.map((e, i) => {
+                        return <div className={`card ${i === currentLessonIndex ? "active" : ""}`}>
+                            <span className="lesson">{e.title}</span>
+                            <p className="teacher">{e.teacher}</p>
+                            <div className="info cabinet">
+                                <MapPinIcon/>
+                                <p className="cabinet">{e.cabinet} кабинет</p>
+                            </div>
+                            <div className="info lesson_time">
+                                <ClockIcon/>
+                                <p className="clock">{_formatTime(times[i].from)} - {_formatTime(times[i].to)}</p>
+                            </div>
+                        </div>
+                    })
+                }
+
+
             </div>
         </div>
     </div>
 }
 
+const _formatTime = (time: Time): string => {
+    let h = time.h.toString(), m = time.m.toString();
+    if (h.length === 1) h = "0" + h;
+    if (m.length === 1) m = "0" + m;
+    return `${h}:${m}`;
+};
 
 const MapPinIcon: React.FC = () => {
     return <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
