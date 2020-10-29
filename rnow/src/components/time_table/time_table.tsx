@@ -1,41 +1,48 @@
 import React from "react";
 import './index.scss';
+import {Lesson} from "../../App";
 
+type Props = {
+    lessons: Lesson[],
+}
 
-class TimeTable extends React.Component<any, any> {
+const TimeTable: React.FC<Props> = ({lessons}) => {
+    return <
+        div className="time_table">
+        <h2>Уроки</h2>
+        <div className="lessons">
 
-    render(): React.ReactNode {
-        return <div className="time_table">
-            <h2>Уроки</h2>
-            <div className="lessons">
-
-                <div className="time">
-                    <p className="start_time">9:00</p>
-                    <p className="end_time">9:45</p>
-                </div>
-
-                <div className="divider"/>
-
-                <div className="cards">
-                    <div className="card ">
-                        <span className="lesson">История</span>
-                        <p className="teacher">Маргарита Леонидовна</p>
-                        <div className="info cabinet">
-                            <MapPinIcon/>
-                            <p className="cabinet">304 кабинет</p>
+            <div className="time">
+                {
+                    lessons.map((e, i) => {
+                        return <div className="time-group">
+                            <p className="start_time">9:00</p>
+                            <p className="end_time">9:45</p>
                         </div>
-                        <div className="info lesson_time">
-                            <ClockIcon/>
-                            <p className="clock">9:00 - 9:45</p>
-                        </div>
+                    })
+                }
+            </div>
+
+            <div className="divider"/>
+
+            <div className="cards">
+                <div className="card ">
+                    <span className="lesson">123</span>
+                    <p className="teacher">Маргарита Леонидовна</p>
+                    <div className="info cabinet">
+                        <MapPinIcon/>
+                        <p className="cabinet">304 кабинет</p>
                     </div>
-
+                    <div className="info lesson_time">
+                        <ClockIcon/>
+                        <p className="clock">9:00 - 9:45</p>
+                    </div>
                 </div>
-
             </div>
         </div>
-    }
+    </div>
 }
+
 
 const MapPinIcon: React.FC = () => {
     return <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
