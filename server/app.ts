@@ -10,7 +10,7 @@ const port = 3004;
 
 app.use(cors())
 app.get('/', (request, response) => {
-    response.send("Hi motherfucker");
+    response.send("Hi дружок)");
 })
 
 app.use(
