@@ -1,6 +1,6 @@
 import React from "react";
 import './index.scss';
-import {Lesson, LessonTime, Time} from "../../App";
+import {getCabinet, Lesson, LessonTime, Time} from "../../App";
 
 type Props = {
     lessons: Lesson[],
@@ -36,7 +36,7 @@ const TimeTable: React.FC<Props> = ({lessons, times, currentLessonIndex}) => {
                             <p className="teacher">{e.teacher}</p>
                             <div className="info cabinet">
                                 <MapPinIcon/>
-                                <p className="cabinet">{e.cabinet} кабинет</p>
+                                <p className="cabinet">{getCabinet(e.cabinet)}</p>
                             </div>
                             <div className="info lesson_time">
                                 <ClockIcon/>

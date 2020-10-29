@@ -88,6 +88,11 @@ const _isBetween = (time1: Time, time2: Time, time3: Time): boolean => {
     return time1.h <= time3.h && time2.h >= time3.h && time1.m <= time3.m && time2.m >= time3.m;
 }
 
+export const getCabinet = (cab: number) : string => {
+    if (cab === 0) return "Спортзал";
+    return `${cab} кабинет`;
+}
+
 export type Lesson = {
     title: string;
     cabinet: number;
@@ -103,5 +108,6 @@ export type LessonTime = {
     from: Time;
     to: Time;
 }
+
 
 export default App;

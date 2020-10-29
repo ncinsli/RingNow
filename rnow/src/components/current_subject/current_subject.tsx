@@ -5,7 +5,7 @@ import historyImage from "../../img/history.jpg";
 import logo from "../../img/logo.svg";
 import userIcon from "../../img/user-icon.svg";
 import {observer} from "mobx-react";
-import {Lesson} from "../../App";
+import {getCabinet, Lesson} from "../../App";
 
 type Props = {
     className: string;
@@ -31,7 +31,7 @@ const CurrentSubject: React.FC<Props> = ({lesson, className}) => {
 
         <div className="subject">
             <h1>{lesson.title}</h1>
-            <p id="cabinet">{lesson.cabinet} кабинет</p>
+            <p id="cabinet">{getCabinet(lesson.cabinet)}</p>
         </div>
 
         <div className="teacher">
