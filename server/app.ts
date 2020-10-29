@@ -6,7 +6,7 @@ import bodyParser from 'body-parser';
 const fs = require("fs");
 
 const app = express();
-const port = 6969; 
+const port = 3004;
 
 app.use(cors())
 app.get('/', (request, response) => {
