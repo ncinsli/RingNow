@@ -1,0 +1,55 @@
+{
+    "Monday" : {
+        "Lesson1" : { "timestart" : "timeend" },
+        "Lesson2" : { "timestart" : "timeend" },
+        "Lesson3" : { "timestart" : "timeend" },
+        "Lesson4" : { "timestart" : "timeend" },
+        "Lesson5" : { "timestart" : "timeend" },
+        "Lesson6" : { "timestart" : "timeend" }
+    },
+
+    "Tuesday" : {
+        "Lesson1" : { "timestart" : "timeend" },
+        "Lesson2" : { "timestart" : "timeend" },
+        "Lesson3" : { "timestart" : "timeend" },
+        "Lesson4" : { "timestart" : "timeend" },
+        "Lesson5" : { "timestart" : "timeend" },
+        "Lesson6" : { "timestart" : "timeend" }
+    },
+
+    "Wednesday" : {
+        "Lesson1" : { "timestart" : "timeend" },
+        "Lesson2" : { "timestart" : "timeend" },
+        "Lesson3" : { "timestart" : "timeend" },
+        "Lesson4" : { "timestart" : "timeend" },
+        "Lesson5" : { "timestart" : "timeend" },
+        "Lesson6" : { "timestart" : "timeend" }
+    },
+
+    "Thurstday" : {
+        "Lesson1" : { "timestart" : "timeend" },
+        "Lesson2" : { "timestart" : "timeend" },
+        "Lesson3" : { "timestart" : "timeend" },
+        "Lesson4" : { "timestart" : "timeend" },
+        "Lesson5" : { "timestart" : "timeend" },
+        "Lesson6" : { "timestart" : "timeend" }
+    },
+
+    "Friday" : {
+        "Lesson1" : { "timestart" : "timeend" },
+        "Lesson2" : { "timestart" : "timeend" },
+        "Lesson3" : { "timestart" : "timeend" },
+        "Lesson4" : { "timestart" : "timeend" },
+        "Lesson5" : { "timestart" : "timeend" },
+        "Lesson6" : { "timestart" : "timeend" }
+    },
+
+    "Saturday" : {
+        "Lesson1" : { "timestart" : "timeend" },
+        "Lesson2" : { "timestart" : "timeend" },
+        "Lesson3" : { "timestart" : "timeend" },
+        "Lesson4" : { "timestart" : "timeend" },
+        "Lesson5" : { "timestart" : "timeend" },
+        "Lesson6" : { "timestart" : "timeend" }
+    }
+}

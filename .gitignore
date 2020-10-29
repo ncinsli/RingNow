@@ -2,6 +2,7 @@
 
 # dependencies
 rnow/node_modules
+server/node_modules
 /.pnp
 .pnp.js
 
