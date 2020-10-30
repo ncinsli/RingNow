@@ -56,7 +56,7 @@ const CurrentSubject: React.FC<Props> = ({lesson, className, onClassChanges}) =>
 }
 
 const getBg = (lesson: string) : string => {
-return "https://www.centrattek.ru/media/cache/01/67/0167fbd454316504924858b88e8ebf1b.jpg";
+// return "https://www.centrattek.ru/media/cache/01/67/0167fbd454316504924858b88e8ebf1b.jpg";
     switch (lesson) {
 
         case "Алгебра":
