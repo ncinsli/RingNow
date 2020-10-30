@@ -1,5 +1,8 @@
 .time_table {
-    margin: 20px;
+    background-color: white;
+    border-radius: 20px;
+    transform: translateY(-30px);
+    padding: 20px;
 
     h2 {
         color: #111111;
@@ -21,7 +24,7 @@
             &-group {
                 height: 137px;
                 margin-top: 1px;
-                margin-bottom: 20px;
+                margin-bottom: 30px;
             }
 
             p {
@@ -57,7 +60,7 @@
                 border-radius: 20px;
                 background-color: #E7EFFF;
                 color: #508BFF;
-                margin-bottom: 20px;
+                margin-bottom: 30px;
 
 
                 &.active {

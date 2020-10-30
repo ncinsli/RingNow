@@ -6,15 +6,13 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    print(JavascriptMode.values);
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       home: Scaffold(
         body: Center(
           child: WebView(
-            initialUrl: 'http://test.api-mentrgo.tk/',
+            initialUrl: 'http://192.168.1.202:3000/',
             javascriptMode: JavascriptMode.unrestricted,
           ),
         ),

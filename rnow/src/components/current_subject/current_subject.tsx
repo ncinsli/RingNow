@@ -21,10 +21,6 @@ const CurrentSubject: React.FC<Props> = ({lesson, className}) => {
 
     const [classChoosingActive, setClassChoosing] = useState(false);
 
-    let state = {
-      classChoosingActive : false,
-      classChoosed : "8A"   
-    };
 
     return <React.Fragment> 
         <div className="current_subject" style={styles.current_subject}>
