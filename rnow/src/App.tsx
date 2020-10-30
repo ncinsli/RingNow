@@ -100,14 +100,14 @@ const _isBetween = (time1: Time, time2: Time, time3: Time): boolean => {
 
 
 
-export const getCabinet = (cab: number) : string => {
-    if (cab === 0) return "Спортзал";
+export const getCabinet = (cab: string) : string => {
+    if (cab === "0") return "Спортзал";
     return `${cab} кабинет`;
 }
 
 export type Lesson = {
     title: string;
-    cabinet: number;
+    cabinet: string;
     teacher: string;
 };
 
