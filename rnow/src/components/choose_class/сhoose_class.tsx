@@ -7,6 +7,7 @@ type Props = {
     onChoose: (className: string) => void;
 }
 
+
 const classNames = ["7А", "7Б", "8А", "8Б", "8В", "9А", "9Б", "9В", "10А", "10Б", "10В", "11А", "11Б", "11В"];
 
 const ChooseClass: React.FC<Props> = ({className, isActive, onChoose}) => {
@@ -26,7 +27,7 @@ const ChooseClass: React.FC<Props> = ({className, isActive, onChoose}) => {
             <div className="classGridView">
 
                 {
-                    classNames.map((e) => <div  onClick={() => onChoose(e)} key={e} className={`classChooseLabel ${className === e ? "active" : ""}`}>{e}</div>)
+                    classNames.map((e, i) => <div  onClick={() => onChoose(e)} key={e} className={`classChooseLabel ${className === e ? "active" : ""}`}>{e}</div>)
                 }
 
             </div>

@@ -14,11 +14,28 @@ const App: React.FC = () => {
     const [lessons, setLessons] = useState<Lesson[]>([]);
     const [lessonsTime, setLessonsTime] = useState<LessonTime[]>([]);
 
+    const classNamesToEng = {
+        "7A": "7A",
+        "7Б": "7B",
+        "8А": "8A",
+        "8Б": "8B",
+        "8В": "8C",
+        "9А": "9A",
+        "9Б": "9B",
+        "9В": "9C",
+        "10А": "10A",
+        "10Б": "10B",
+        "10В": "10C",
+        "11А": "11A",
+        "11Б": "11B",
+        "11В": "11C",
+    };
+
     const fetchLessons = (className: string) => {
-        axios.get(`http://ring-now.tk/class/${className}`,)
+        // @ts-ignore
+        axios.get(`http://ring-now.tk/class/${classNamesToEng[className]}`,)
             .then((res) => {
 
-                console.log(res.data);
                 if (res.data && res.data.code === "fail") return ;
 
                 const date = new Date().getDay();
@@ -37,6 +54,8 @@ const App: React.FC = () => {
     useEffect(() => {
         fetchLessons(className);
     }, []);
+
+    console.log(lessons, currentLesson);
 
 
     return <React.Fragment>
