@@ -14,7 +14,7 @@ const App: React.FC = () => {
     const [lessons, setLessons] = useState<Lesson[]>([]);
     const [lessonsTime, setLessonsTime] = useState<LessonTime[]>([]);
 
-    const fetchLessons = () => {
+    const fetchLessons = (className: string) => {
         axios.get(`http://ring-now.tk/class/${className}`,)
             .then((res) => {
 
@@ -35,7 +35,7 @@ const App: React.FC = () => {
 
 
     useEffect(() => {
-        fetchLessons();
+        fetchLessons(className);
     }, []);
 
 
@@ -45,7 +45,7 @@ const App: React.FC = () => {
                 ? <React.Fragment>
                     <CurrentSubject onClassChanges={(className1 ) => {
                         setClassName(className1);
-                        fetchLessons();
+                        fetchLessons(className1);
                     }} className={className} lesson={lessons[currentLesson]}/>
                     <TimeTable lessons={lessons} times={lessonsTime} currentLessonIndex={currentLesson}/>
                 </React.Fragment>

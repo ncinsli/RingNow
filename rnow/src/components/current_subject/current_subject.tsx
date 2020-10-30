@@ -4,7 +4,7 @@ import './index.scss';
 import historyImage from "../../img/history.jpg";
 import logo from "../../img/logo.svg";
 import userIcon from "../../img/user-icon.svg";
-import {Lesson} from "../../App";
+import {getCabinet, Lesson} from "../../App";
 import ChooseClass from "../choose_class/сhoose_class";
 
 type Props = {
@@ -34,7 +34,7 @@ const CurrentSubject: React.FC<Props> = ({lesson, className, onClassChanges}) =>
 
             <div className = "subject">
                 <h1>{lesson.title}</h1>
-                <p id="cabinet">{lesson.cabinet} кабинет</p>
+                <p id="cabinet">{getCabinet(lesson.cabinet)}</p>
             </div>
 
             
