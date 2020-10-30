@@ -56,7 +56,7 @@ const CurrentSubject: React.FC<Props> = ({lesson, className, onClassChanges}) =>
 }
 
 const getBg = (lesson: string) : string => {
-return "https://www.science.edu/acellus/wp-content/uploads/2016/12/Biology-Gen-Honors.jpg";
+return "https://www.centrattek.ru/media/cache/01/67/0167fbd454316504924858b88e8ebf1b.jpg";
     switch (lesson) {
 
         case "Алгебра":
@@ -77,8 +77,20 @@ return "https://www.science.edu/acellus/wp-content/uploads/2016/12/Biology-Gen-H
             return "https://sun9-12.userapi.com/Ej4RmEjCGE4n-GWEjTkdnfTPWtMRIxOnb0OEdw/2mlmrGbWS4Y.jpg"
         case "История":
             return "https://images.unsplash.com/photo-1509024644558-2f56ce76c490?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80";
+        case "Обществознание":
+            return "https://images.unsplash.com/photo-1509024644558-2f56ce76c490?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80";
         case "Биология":
             return "https://www.science.edu/acellus/wp-content/uploads/2016/12/Biology-Gen-Honors.jpg";
+        case "География":
+            return  "https://natworld.info/wp-content/uploads/2019/06/Geografija-v-drevnosti-900x500.jpg";
+        case "Английский язык":
+            return "https://tritec-education.ru/wp-content/uploads/2015/09/english_all_stars.jpg";
+        case "Музыка":
+            return "https://www.classicalmusicnews.ru/wp-content/uploads/2014/03/klassicheskaya-muzyika.jpg";
+        case "ИЗО":
+            return "https://dom-mol.ru/wp-content/uploads/2017/01/%D0%98%D0%B7%D0%BE-%D0%BD%D0%B0-%D1%81%D0%B0%D0%B9%D1%82.jpg"
+        case "ОБЖ":
+            return "https://www.centrattek.ru/media/cache/01/67/0167fbd454316504924858b88e8ebf1b.jpg";
         default:
             return "https://images.unsplash.com/photo-1509024644558-2f56ce76c490?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80";
     }
