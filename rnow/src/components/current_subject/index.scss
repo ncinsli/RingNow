@@ -1,7 +1,4 @@
 .current_subject {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 
     height: 270px;
     width: 100vw;
@@ -12,12 +9,24 @@
     background-size: 100%;
     background-position: top;
     background-repeat: no-repeat;
+
+
+    .blur {
+        height: 100%;
+        background: rgba(#000, 0.3);
+        backdrop-filter: blur(0.5px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px 20px;
+        padding-bottom: 40px;
+    }
+
     //background-attachment:fixed;
 
 
     color: white;
-    padding: 30px 20px;
-    padding-bottom: 40px;
+
 
 
     header {

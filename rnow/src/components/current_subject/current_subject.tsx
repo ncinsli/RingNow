@@ -16,7 +16,7 @@ type Props = {
 const CurrentSubject: React.FC<Props> = ({lesson, className, onClassChanges}) => {
     const styles = {
         current_subject: {
-            backgroundImage: `url(${historyImage})`,
+            backgroundImage: `url(${getBg(lesson.title)})`,
         }
     };
 
@@ -24,24 +24,26 @@ const CurrentSubject: React.FC<Props> = ({lesson, className, onClassChanges}) =>
 
     return <React.Fragment> 
         <div className="current_subject" style={styles.current_subject}>
-            <header>
-                <div className="logo">
-                    <img src={logo} alt="ring now logo" className="logo"/>
-                    <h2 id="logo-text">Ring Now</h2>
-                </div>
-                <div className="class_button" onClick = {() => setClassChoosingActive(true)}>{className}</div>
-            </header>
+           <div className="blur">
+               <header>
+                   <div className="logo">
+                       <img src={logo} alt="ring now logo" className="logo"/>
+                       <h2 id="logo-text">Ring Now</h2>
+                   </div>
+                   <div className="class_button" onClick = {() => setClassChoosingActive(true)}>{className}</div>
+               </header>
 
-            <div className = "subject">
-                <h1>{lesson.title}</h1>
-                <p id="cabinet">{getCabinet(lesson.cabinet)}</p>
-            </div>
+               <div className = "subject">
+                   <h1>{lesson.title}</h1>
+                   <p id="cabinet">{getCabinet(lesson.cabinet)}</p>
+               </div>
 
-            
-            <div className = "teacher">
-                <img src={userIcon} alt="user-icon"/>
-                <p id="name">{lesson.teacher}</p>
-            </div>
+
+               <div className = "teacher">
+                   <img src={userIcon} alt="user-icon"/>
+                   <p id="name">{lesson.teacher}</p>
+               </div>
+           </div>
         </div>
 
         <ChooseClass className={className} isActive={classChoosingActive} onChoose={(className1 => {
@@ -51,6 +53,35 @@ const CurrentSubject: React.FC<Props> = ({lesson, className, onClassChanges}) =>
 
     </React.Fragment> 
 
+}
+
+const getBg = (lesson: string) : string => {
+return "https://www.science.edu/acellus/wp-content/uploads/2016/12/Biology-Gen-Honors.jpg";
+    switch (lesson) {
+
+        case "Алгебра":
+            return "https://undark.org/wp-content/uploads/2020/01/GettyImages-154932300.jpg";
+        case "Геометрия":
+            return "https://undark.org/wp-content/uploads/2020/01/GettyImages-154932300.jpg";
+        case "Физика":
+            return "https://sun9-21.userapi.com/VmLnE5-VzQuhRjMOWgs04TDaorvZm7oZHGwCLw/IhaI7QIgYRA.jpg";
+        case "Химия":
+            return "https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+        case "Русский язык":
+            return "https://sun9-42.userapi.com/twN6Uug8iwlcIlr2f_aXWy2NViZT8BKXmR-qlA/e1xL-tPkjGc.jpg"
+        case "Литература":
+            return "https://sun9-42.userapi.com/twN6Uug8iwlcIlr2f_aXWy2NViZT8BKXmR-qlA/e1xL-tPkjGc.jpg"
+        case "Информатика":
+            return "https://images.unsplash.com/photo-1550645612-83f5d594b671?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+        case "Физкультура":
+            return "https://sun9-12.userapi.com/Ej4RmEjCGE4n-GWEjTkdnfTPWtMRIxOnb0OEdw/2mlmrGbWS4Y.jpg"
+        case "История":
+            return "https://images.unsplash.com/photo-1509024644558-2f56ce76c490?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80";
+        case "Биология":
+            return "https://www.science.edu/acellus/wp-content/uploads/2016/12/Biology-Gen-Honors.jpg";
+        default:
+            return "https://images.unsplash.com/photo-1509024644558-2f56ce76c490?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80";
+    }
 }
 
 
