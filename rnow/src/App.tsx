@@ -33,7 +33,7 @@ const App: React.FC = () => {
 
     const fetchLessons = (className: string) => {
         // @ts-ignore
-        axios.get(`http://ring-now.tk/class/${classNamesToEng[className]}`,)
+        axios.get(`http://ring-now.tk/class/${classNamesToEng[className]}`)
             .then((res) => {
 
                 if (res.data && res.data.code === "fail") return ;
@@ -55,7 +55,6 @@ const App: React.FC = () => {
         fetchLessons(className);
     }, []);
 
-    console.log(lessons, currentLesson);
 
 
     return <React.Fragment>
@@ -105,6 +104,8 @@ export const _calcCurrentLesson = (lessons: Lesson[]): [number, LessonTime[]] =>
             end = _add(end, 55)
         }
     }
+
+    if (lessonIndex > lessons.length) lessonIndex = lessonIndex - 1;
 
     return [lessonIndex, lessonsTimes_];
 };

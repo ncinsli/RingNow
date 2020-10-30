@@ -12,7 +12,6 @@ const classNames = ["7А", "7Б", "8А", "8Б", "8В", "9А", "9Б", "9В", "10�
 
 const ChooseClass: React.FC<Props> = ({className, isActive, onChoose}) => {
 
-    console.log(className);
 
     return <React.Fragment>
         <div id={isActive ? "wrapper" : "wrapperHidden"}
@@ -25,11 +24,9 @@ const ChooseClass: React.FC<Props> = ({className, isActive, onChoose}) => {
 
 
             <div className="classGridView">
-
                 {
                     classNames.map((e, i) => <div  onClick={() => onChoose(e)} key={e} className={`classChooseLabel ${className === e ? "active" : ""}`}>{e}</div>)
                 }
-
             </div>
         </div>
     </React.Fragment>;

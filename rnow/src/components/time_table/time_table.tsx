@@ -8,7 +8,40 @@ type Props = {
     currentLessonIndex: number;
 }
 
-const TimeTable: React.FC<Props> = ({lessons, times, currentLessonIndex}) => {
+const times : LessonTime[] = [
+    {
+        from: {h: 9, m:0},
+        to: {h: 9, m: 45}
+    },
+    {
+        from: {h: 9, m: 55},
+        to: {h: 10, m: 40}
+    },
+    {
+        from: {h: 10, m: 50},
+        to: {h: 11, m: 35},
+    },
+    {
+        from: {h: 11, m: 55},
+        to: {h: 12, m: 40},
+    },
+    {
+        from: {h: 13, m: 0},
+        to: {h: 13, m: 45},
+    },
+    {
+        from: {h: 13, m: 55},
+        to: {h: 14, m: 35},
+    },
+    {
+        from: {h: 14, m: 45},
+        to: {h: 15, m: 30},
+    },
+];
+
+const TimeTable: React.FC<Props> = ({lessons,  currentLessonIndex}) => {
+
+
     return <
         div className="time_table">
         <h2>Уроки</h2>

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import './index.scss';
 
-import historyImage from "../../img/history.jpg";
 import logo from "../../img/logo.svg";
 import userIcon from "../../img/user-icon.svg";
 import {getCabinet, Lesson} from "../../App";
@@ -16,7 +15,7 @@ type Props = {
 const CurrentSubject: React.FC<Props> = ({lesson, className, onClassChanges}) => {
     const styles = {
         current_subject: {
-            backgroundImage: `url(${getBg(lesson.title)})`,
+            backgroundImage: `url(${getBg(lesson?.title)})`,
         }
     };
 
