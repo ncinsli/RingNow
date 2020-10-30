@@ -1,0 +1,107 @@
+
+#wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &Hidden {
+        visibility: hidden;
+    }
+
+    padding-left: 0%;
+    margin-left: 0%;
+    top: 0%;
+    left: 0%;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 14;
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+//@keyframes opacityChangeFwd {
+//    from {
+//
+//        //background-color: rgba(255, 255, 255, 0);
+//    }
+//    to {
+//        background-color: rgba(255, 255, 255, 1);
+//    }
+//}
+//
+//@keyframes opacityChangeBck {
+//    from {
+//        background-color: rgba(255, 255, 255, 1);
+//        transform: scale(1);
+//    }
+//    to {
+//        background-color: rgba(255, 255, 255, 0);
+//        transform: scale(0);
+//    }
+//}
+
+
+
+.chooseClass {
+    transition: 300ms;
+    //animation-duration: 0.2s;
+    //animation-name: opacityChangeFwd;
+    position: absolute;
+    right: 9vw;
+    top: 7.5vh;
+    z-index: 15;
+    text-align: center;
+    margin-left: 0.75vw;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 20px;
+    width: 80vw;
+    height: 85vh;
+    box-shadow: 0 5px 15px rgba(80, 139, 255, 0.15);
+    overflow-y: scroll;
+
+    h1 {
+        color: #111111;
+        font-weight: 500;
+        font-size: 32px;
+        opacity: 0.9;
+    }
+
+    &.hidden {
+        //animation-duration: 0.4s;
+        //animation-name: opacityChangeBck;
+        opacity: 0.5;
+        //display: none;
+        //z-index: -100;
+        transform: scale(0) translateY(-50%);
+    }
+
+
+    .classGridView {
+        margin: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+
+        .classChooseLabel {
+            width: calc((80vw - 60px) / 2);
+            height: calc((80vw - 60px) / 2);
+            border-radius: 10px;
+            background: #E7EFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 36px;
+            color: #5D94FF;
+            font-weight: 500;
+
+            &.active {
+                background-color: #5D94FF;
+                color: white;
+            }
+        }
+
+
+    }
+}

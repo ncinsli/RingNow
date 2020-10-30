@@ -8,7 +8,7 @@ import axios from "axios";
 
 const App: React.FC = () => {
 
-    const [className, setClassName] = useState("8A");
+    const [className, setClassName] = useState("8А");
     const [loading, setLoading] = useState(true);
     const [currentLesson, setCurrentLesson] = useState(0);
     const [lessons, setLessons] = useState<Lesson[]>([]);
@@ -36,7 +36,7 @@ const App: React.FC = () => {
         {
             !loading
                 ? <React.Fragment>
-                    <CurrentSubject className={className} lesson={lessons[currentLesson]}/>
+                    <CurrentSubject onClassChanges={setClassName} className={className} lesson={lessons[currentLesson]}/>
                     <TimeTable lessons={lessons} times={lessonsTime} currentLessonIndex={currentLesson}/>
                 </React.Fragment>
                 : <Loader/>

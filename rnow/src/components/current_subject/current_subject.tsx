@@ -4,23 +4,23 @@ import './index.scss';
 import historyImage from "../../img/history.jpg";
 import logo from "../../img/logo.svg";
 import userIcon from "../../img/user-icon.svg";
-import {observer} from "mobx-react";
 import {Lesson} from "../../App";
+import ChooseClass from "../choose_class/сhoose_class";
 
 type Props = {
     className: string;
     lesson: Lesson;
+    onClassChanges: (className:string) => void;
 }
 
-const CurrentSubject: React.FC<Props> = ({lesson, className}) => {
+const CurrentSubject: React.FC<Props> = ({lesson, className, onClassChanges}) => {
     const styles = {
         current_subject: {
             backgroundImage: `url(${historyImage})`,
         }
     };
 
-    const [classChoosingActive, setClassChoosing] = useState(false);
-
+    const [classChoosingActive, setClassChoosingActive] = useState(false);
 
     return <React.Fragment> 
         <div className="current_subject" style={styles.current_subject}>
@@ -29,7 +29,7 @@ const CurrentSubject: React.FC<Props> = ({lesson, className}) => {
                     <img src={logo} alt="ring now logo" className="logo"/>
                     <h2 id="logo-text">Ring Now</h2>
                 </div>
-                <div className="class_button" onClick = {() => setClassChoosing(true)}>{className}</div>
+                <div className="class_button" onClick = {() => setClassChoosingActive(true)}>{className}</div>
             </header>
 
             <div className = "subject">
@@ -44,21 +44,11 @@ const CurrentSubject: React.FC<Props> = ({lesson, className}) => {
             </div>
         </div>
 
-        <div id = { classChoosingActive ? "wrapper" : "wrapperHidden"} 
-            onClick = {() => setClassChoosing(false)}> </div>
-        <div className = { classChoosingActive? "chooseClass" : "chooseClassHidden"}>
-            {/* Разметка внутри - разметка выбора класса */}
-            <h1 style = {{paddingTop: "1.75vh"}}>Выбери класс</h1>
-            <div id = "classGridView">
-                <div className = "classChooseLabel">7A</div> <div className = "classChooseLabel">7Б</div>        
-                <div className = "classChooseLabel">8A</div> <div className = "classChooseLabel">8Б</div>                
-                <div className = "classChooseLabel">8B</div> <div className = "classChooseLabel">9A</div>                
-                <div className = "classChooseLabel">9Б</div> <div className = "classChooseLabel">9В</div>   
-                <div className = "classChooseLabel">10А</div> <div className = "classChooseLabel">10Б</div>
-                <div className = "classChooseLabel">10В</div> <div className = "classChooseLabel">11А</div> 
-                <div className = "classChooseLabel">11Б</div> <div className = "classChooseLabel">11В</div>                                                            
-            </div>
-        </div>
+        <ChooseClass className={className} isActive={classChoosingActive} onChoose={(className1 => {
+            setClassChoosingActive(false);
+            onClassChanges(className1);
+        }) }/>
+
     </React.Fragment> 
 
 }
