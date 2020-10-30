@@ -38,33 +38,33 @@
   "Friday": [
     {
       "title": "Алгебра",
-      "teacher": "ТА",
+      "teacher": "ЕЕ",
       "cabinet": 205
     },
     {
       "title": "Алгебра",
-      "teacher": "ТА",
+      "teacher": "ЕЕ",
       "cabinet": 205
-    },
-    {
-      "title": "Русский язык",
-      "teacher": "МР",
-      "cabinet": 305
-    },
-    {
-      "title": "Русский язык",
-      "teacher": "МР",
-      "cabinet": 305
     },
     {
       "title": "Химия",
       "teacher": "ЛИ",
-      "cabinet": 303
+      "cabinet": 305
     },
     {
-      "title": "Физкультура",
-      "teacher": "ЛР",
-      "cabinet": 0
+      "title": "Физика",
+      "teacher": "ЛВ",
+      "cabinet": 201
+    },
+    {
+      "title": "Физика",
+      "teacher": "ЛВ",
+      "cabinet": 201
+    },
+    {
+      "title": "География",
+      "teacher": "ЕГ",
+      "cabinet": 308
     }
   ],
   "Saturday": [

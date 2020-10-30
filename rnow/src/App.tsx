@@ -14,11 +14,13 @@ const App: React.FC = () => {
     const [lessons, setLessons] = useState<Lesson[]>([]);
     const [lessonsTime, setLessonsTime] = useState<LessonTime[]>([]);
 
-
-    useEffect(() => {
+    const fetchLessons = () => {
         axios.get(`http://ring-now.tk/class/${className}`,)
             .then((res) => {
+
                 console.log(res.data);
+                if (res.data && res.data.code === "fail") return ;
+
                 const date = new Date().getDay();
                 setLessons(res.data[_mapIndexToDay[date]]);
                 const [lessonIndex, lessonsTime] = _calcCurrentLesson(res.data[_mapIndexToDay[date]]);
@@ -29,6 +31,11 @@ const App: React.FC = () => {
             .catch((e) => {
 
             })
+    }
+
+
+    useEffect(() => {
+        fetchLessons();
     }, []);
 
 
@@ -36,7 +43,10 @@ const App: React.FC = () => {
         {
             !loading
                 ? <React.Fragment>
-                    <CurrentSubject onClassChanges={setClassName} className={className} lesson={lessons[currentLesson]}/>
+                    <CurrentSubject onClassChanges={(className1 ) => {
+                        setClassName(className1);
+                        fetchLessons();
+                    }} className={className} lesson={lessons[currentLesson]}/>
                     <TimeTable lessons={lessons} times={lessonsTime} currentLessonIndex={currentLesson}/>
                 </React.Fragment>
                 : <Loader/>
@@ -87,6 +97,8 @@ const _add = (time: Time, add: number): Time => {
 const _isBetween = (time1: Time, time2: Time, time3: Time): boolean => {
     return time1.h <= time3.h && time2.h >= time3.h && time1.m <= time3.m && time2.m >= time3.m;
 }
+
+
 
 export const getCabinet = (cab: number) : string => {
     if (cab === 0) return "Спортзал";
