@@ -32,12 +32,15 @@ const App: React.FC = () => {
     };
 
     const fetchLessons = (className: string) => {
+
+        // @ts-ignore
+        console.log(`http://ring-now.tk/class/${classNamesToEng[className]}`);
+
         // @ts-ignore
         axios.get(`http://ring-now.tk/class/${classNamesToEng[className]}`)
             .then((res) => {
-
+                console.log(res.data);
                 if (res.data && res.data.code === "fail") return ;
-
                 const date = new Date().getDay();
                 setLessons(res.data[_mapIndexToDay[date]]);
                 const [lessonIndex, lessonsTime] = _calcCurrentLesson(res.data[_mapIndexToDay[date]]);

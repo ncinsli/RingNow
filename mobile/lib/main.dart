@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: Center(
           child: WebView(
-            initialUrl: 'http://192.168.1.202:3000/',
+            initialUrl: 'http://test.api-mentrgo.tk/',
             javascriptMode: JavascriptMode.unrestricted,
           ),
         ),
