@@ -1,0 +1,121 @@
+.time_table {
+    background-color: white;
+    border-radius: 20px;
+    transform: translateY(-30px);
+    padding: 20px;
+
+    h2 {
+        color: #111111;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .lessons {
+        display: flex;
+        margin-top: 10px;
+
+
+        .time {
+            margin-right: 20px;
+            display: flex;
+            flex-direction: column;
+
+
+            &-group {
+                height: 137px;
+                margin-top: 1px;
+                margin-bottom: 30px;
+            }
+
+            p {
+                font-size: 14px;
+
+                &.start_time {
+                    color: #111111;
+                }
+
+                &.end_time {
+                    color: #E5E5E5;
+                }
+            }
+        }
+
+        .divider {
+            margin-right: 20px;
+            width: 1px;
+            background: #AEAEAE;
+        }
+
+        .cards {
+            position: relative;
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+
+
+            .card {
+                display: flex;
+                flex-direction: column;
+                padding: 20px;
+                border-radius: 20px;
+                background-color: #E7EFFF;
+                color: #508BFF;
+                margin-bottom: 30px;
+
+
+                &.active {
+                    opacity: 1;
+                    color: white;
+                    background-color: #508BFF;
+
+                    img.draw {
+                        top: 0;
+                        right: 0;
+                        position: absolute;
+                        z-index: 100;
+                    }
+
+                    svg {
+                        path {
+                            fill: white;
+                        }
+                    }
+                }
+
+                svg {
+                    path {
+                        fill: #508BFF;
+                    }
+                }
+
+
+                span.lesson {
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+
+                p.teacher {
+                    font-size: 14px;
+                    opacity: 0.75;
+                    margin-bottom: 10px;
+                }
+
+                .info {
+                    margin-top: 4px;
+                    display: flex;
+                    align-items: center;
+
+                    p {
+                        margin-left: 10px;
+                        font-size: 14px;
+                        opacity: 0.9;
+                    }
+
+                }
+
+
+            }
+        }
+
+    }
+}

@@ -1,0 +1,106 @@
+.current_subject {
+
+    height: 270px;
+    width: 100vw;
+    //border-bottom-left-radius: 30px;
+    //border-bottom-right-radius: 30px;
+
+    //background: #000 !important;
+    background-size: 150% 150%;
+    background-position: top;
+    background-repeat: no-repeat;
+
+
+
+    .blur {
+        height: 100%;
+        background: rgba(#000, 0.3);
+        backdrop-filter: blur(0.5px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px 20px;
+        padding-bottom: 40px;
+    }
+
+    //background-attachment:fixed;
+
+
+    color: white;
+
+
+
+    header {
+        display: flex;
+        justify-content: space-between;
+
+        .logo {
+            display: flex;
+            align-items: center;
+
+            h2 {
+                margin-left: 10px;
+                font-weight: 500;
+            }
+        }
+
+        .class_button {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #5D94FF;
+            font-size: 18px;
+        }
+    }
+
+    .subject {
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        p#cabinet {
+            font-size: 15px;
+            color: white;
+            opacity: 0.8;
+        }
+    }
+
+    .teacher {
+        display: flex;
+
+        img {
+            width: 21px;
+            height: 21px;
+            margin-right: 7px;
+        }
+
+        p#name {
+            opacity: 0.9;
+        }
+    }
+
+    .class_button:hover{
+        transition: all 0.2s ease-in-out;
+        transform: scale(1.55);
+    }
+
+    .class_button{
+        transition: all 0.2s ease-in-out;
+        transform: scale(1);
+    }
+
+}
+
+
+    
+
+
